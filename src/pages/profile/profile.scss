@@ -1,0 +1,30 @@
+page-profile {
+  .toolbar-background {
+    // background-color: #3d7ea9;
+    // background: #FFEEDB;
+    // background: linear-gradient(to bottom,  #006E90, #006);
+    // border-bottom: 0px !important;
+  }
+
+  .profileImg {
+    border-radius: 50%;
+    height: 20%;
+    border: 2px solid white;
+  }
+  .home {
+    text-align: center;
+    margin-top: 10%;
+    color: black;
+    // background: linear-gradient(to bottom,  #006E90, #ffffff);
+    // background: #006E90;
+  }
+  .name {
+    color: black;
+    font-size: 1.5em;
+  }
+  .school {
+    color: black;
+    font-size: 1em;
+  }
+
+}

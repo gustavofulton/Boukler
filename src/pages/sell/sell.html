@@ -1,0 +1,48 @@
+<!--
+  Generated template for the Sell page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar hideBackButton>
+    <ion-title>Sell your Books</ion-title>
+    <ion-buttons end>
+      <button ion-button clear icon-left color="black" (click)="addSellingBook()">
+        <ion-icon name="add" ></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list-header class="header" *ngIf="books.length > 0">
+    Here are the books you are selling!
+  </ion-list-header>
+  <ion-list-header class="header" *ngIf="books.length == 0">
+    You don't have any books selling yet!
+  </ion-list-header>
+  <ion-list>
+    <ion-item-sliding *ngFor="let book of books">
+      <ion-item >
+        <ion-thumbnail item-left>
+          <img class="profileImg" src="https://scontent.xx.fbcdn.net/v/t31.0-8/12138491_10206784856473320_5648851967370717791_o.jpg?oh=f2a03f734d7b4511825b2431b55d5b7d&oe=590AB56C" />
+        </ion-thumbnail>
+        <h2>{{book.class}}</h2>
+        <p>{{book.name}}</p>
+        <p class="price">${{book.price}}</p>
+        <button ion-button clear item-right (click)="openItem(book)">View</button>
+      </ion-item>
+      <ion-item-options class="delete" side="right">
+        <button ion-button color="danger" (click)="deleteBook(book)">
+          <ion-icon name="trash"></ion-icon>
+          Delete
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+</ion-content>

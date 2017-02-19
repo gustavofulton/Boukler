@@ -1,0 +1,33 @@
+<!--
+  Generated template for the Profile page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Profile</ion-title>
+    <ion-buttons end>
+      <button ion-button clear icon-left color="black" (click)="goSettings()">
+        <ion-icon name="settings" ></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="home">
+  <img (click)="getProfileImage()" class="profileImg" src="https://scontent.xx.fbcdn.net/v/t31.0-8/12138491_10206784856473320_5648851967370717791_o.jpg?oh=f2a03f734d7b4511825b2431b55d5b7d&oe=590AB56C" />
+  <ion-card-title class="name">
+      {{firstName}} {{lastName}}
+  </ion-card-title>
+  <ion-card-title class="school">
+      {{school}}
+  </ion-card-title>
+  <p>
+      Web and Mobile application developer with passion for coding and business analyst to provide problem solving approach.
+  </p>
+
+</ion-content>
