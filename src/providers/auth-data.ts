@@ -41,7 +41,8 @@ export class AuthData {
             lastName: lastName,
             id: 0,
             phoneNumber: "",
-            school: ""
+            school: "",
+            profilePic: "http://learngroup.org/assets/images/logos/default_male.jpg",
           }
         );
       });

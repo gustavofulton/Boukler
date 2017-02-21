@@ -21,14 +21,20 @@ export class BuyPage {
 
   ref = firebase.database().ref('/users');
 
+  // sellerUserId = firebase.auth().currentUser.uid;
+
 
   constructor(public nav: NavController, public navParams: NavParams) {
     this.ref.on("value", (snapshot) => {
       let books = [];
       snapshot.forEach((childSnapshot) => {
+        let sellerUserId = childSnapshot.key;
+        let sellerProfilePic = childSnapshot.val().profilePic;
         childSnapshot.child("sellingBooks").forEach((extraChildSnap) => {
           let tempVal = extraChildSnap.val();
           tempVal.id = extraChildSnap.key;
+          tempVal.sellerId = sellerUserId;
+          tempVal.sellerProfilePic = sellerProfilePic;
             books.push(
               tempVal
             );
@@ -58,6 +64,8 @@ export class BuyPage {
       this.empty = true;
       return;
     }
+
+    console.log(this.booksList);
 
 
     this.booksList = this.booksList.filter((v) => {

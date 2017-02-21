@@ -17,11 +17,16 @@ import firebase from 'firebase';
 })
 export class SellPage {
   books: any[] = [];
+
   user = firebase.auth().currentUser;
   userSchool: any;
+  profilePic: any;
+
   ref = firebase.database().ref('/users').child(this.user.uid).child("sellingBooks");
+
   starCountRef = firebase.database().ref('users/' + this.user.uid).once('value').then( (data) => {
     this.userSchool = data.val().school;
+    this.profilePic = data.val().profilePic;
   });
 
   constructor(public nav: NavController, public navParams: NavParams, public modalCtrl: ModalController, public alertCtrl: AlertController) {

@@ -21,7 +21,7 @@
   <ion-list *ngIf="!empty">
     <button ion-item (click)="openItem(item)" *ngFor="let book of booksList">
       <ion-avatar item-left>
-        <img src="https://scontent.xx.fbcdn.net/v/t31.0-8/12138491_10206784856473320_5648851967370717791_o.jpg?oh=f2a03f734d7b4511825b2431b55d5b7d&oe=590AB56C" />
+        <img [src]="book.sellerProfilePic" />
       </ion-avatar>
       <h2>{{book.class}}</h2>
       <p>{{book.name}}</p>

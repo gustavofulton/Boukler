@@ -29,7 +29,7 @@
     <ion-item-sliding *ngFor="let book of books">
       <ion-item >
         <ion-thumbnail item-left>
-          <img class="profileImg" src="https://scontent.xx.fbcdn.net/v/t31.0-8/12138491_10206784856473320_5648851967370717791_o.jpg?oh=f2a03f734d7b4511825b2431b55d5b7d&oe=590AB56C" />
+          <img class="profileImg" [src]="profilePic" />
         </ion-thumbnail>
         <h2>{{book.class}}</h2>
         <p>{{book.name}}</p>
