@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ViewController } from 'ionic-angular';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+
+import firebase from 'firebase';
 
 /*
   Generated class for the SellDetail page.
@@ -14,13 +17,48 @@ import { NavController, NavParams } from 'ionic-angular';
 export class SellDetailPage {
   book: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  user = firebase.auth().currentUser;
+
+  isReadyToSave: boolean;
+
+  form: FormGroup;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, formBuilder: FormBuilder, public viewCtrl: ViewController) {
     this.book = navParams.get('book');
-    console.log(this.book);
+
+    this.form = formBuilder.group({
+      classCode: this.book.class,
+      name: this.book.name,
+      author: this.book.author,
+      edition: this.book.edition,
+      price: this.book.price,
+      negotiate: this.book.negotiate
+    });
+
+    // Watch the form for changes, and
+    this.form.valueChanges.subscribe((v) => {
+      this.isReadyToSave = this.form.valid;
+    });
+
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SellDetailPage');
+  cancel() {
+    this.viewCtrl.dismiss();
+  }
+
+  done() {
+    if(!this.form.valid) { return; }
+    let data = {};
+    // console.log(firebase.database().ref('/users').child(this.user.uid).child("sellingBooks").child(this.book.id));
+    let database = firebase.database().ref('/users').child(this.user.uid).child("sellingBooks").child(this.book.id).update({
+      class: this.form.value.classCode,
+      name: this.form.value.name,
+      author: this.form.value.author,
+      edition: this.form.value.edition,
+      price: this.form.value.price,
+      negotiate: this.form.value.negotiate
+    });
+    this.viewCtrl.dismiss(this.form.value);
   }
 
 }

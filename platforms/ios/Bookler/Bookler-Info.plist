@@ -81,8 +81,15 @@
       <string>UIInterfaceOrientationPortraitUpsideDown</string>
       <string>UIInterfaceOrientationLandscapeRight</string>
     </array>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+      <string>fbapi</string>
+      <string>fb-messenger-api</string>
+      <string>fbauth2</string>
+      <string>fbshareextension</string>
+    </array>
     <key>FacebookAppID</key>
-    <string>991767370922848</string>
+    <string>416882581978909</string>
     <key>FacebookDisplayName</key>
     <string>Bookler</string>
     <key>CFBundleURLTypes</key>
@@ -90,16 +97,9 @@
       <dict>
         <key>CFBundleURLSchemes</key>
         <array>
-          <string>fb991767370922848</string>
+          <string>fb416882581978909</string>
         </array>
       </dict>
-    </array>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-      <string>fbapi</string>
-      <string>fb-messenger-api</string>
-      <string>fbauth2</string>
-      <string>fbshareextension</string>
     </array>
   </dict>
 </plist>

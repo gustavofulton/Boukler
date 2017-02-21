@@ -6,8 +6,24 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar hideBackButton>
     <ion-title>Book Detail</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="cancel()">
+        <span color="primary" showWhen="ios">
+          Cancel
+        </span>
+        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button (click)="done()" [disabled]="!isReadyToSave" strong>
+        <span color="primary" showWhen="ios">
+          Done
+        </span>
+        <ion-icon name="md-checkmark" showWhen="core,android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -15,35 +31,37 @@
 
 <ion-content class="home">
   <img class="bookImg" src="http://www.gemologyproject.com/wiki/images/5/5f/Placeholder.jpg">
-  <ion-list>
-    <ion-item>
-      <ion-label fixed>Class</ion-label>
-      <ion-input value="{{book.class}}"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label fixed>Name</ion-label>
-      <ion-input value="{{book.name}}"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label fixed>Author</ion-label>
-      <ion-input value="{{book.author}}"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label fixed>Edition</ion-label>
-      <ion-input value="{{book.edition}}"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label fixed>ISBN</ion-label>
-      <ion-input value="9780134520513"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label fixed>Price</ion-label>
-      <ion-input id="price" value="${{book.price}}"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Willing to Negotiate</ion-label>
-      <ion-toggle checked="{{book.negotiate}}"></ion-toggle>
-    </ion-item>
-  </ion-list>
+  <form *ngIf="form" [formGroup]="form" (ngSubmit)="editItem()">
+    <ion-list>
+      <ion-item>
+        <ion-label fixed>Class</ion-label>
+        <ion-input value="{{book.class}}" formControlName="classCode"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Name</ion-label>
+        <ion-input value="{{book.name}}" formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Author</ion-label>
+        <ion-input value="{{book.author}}" formControlName="author"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Edition</ion-label>
+        <ion-input value="{{book.edition}}" formControlName="edition"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>ISBN</ion-label>
+        <ion-input value="9780134520513"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Price</ion-label>
+        <ion-input id="price" value="${{book.price}}" formControlName="price"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Willing to Negotiate</ion-label>
+        <ion-toggle checked="{{book.negotiate}}" formControlName="negotiate"></ion-toggle>
+      </ion-item>
+    </ion-list>
+  </form>
 
 </ion-content>

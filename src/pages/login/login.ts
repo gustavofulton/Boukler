@@ -52,21 +52,22 @@ export class LoginPage {
   }
 
   facebookLogin(){
-      Facebook.login(['email']).then( (response) => {
-          const facebookCredential = firebase.auth.FacebookAuthProvider
-              .credential(response.authResponse.accessToken);
+    Facebook.login(['email']).then( (response) => {
+      const facebookCredential = firebase.auth.FacebookAuthProvider
+        .credential(response.authResponse.accessToken);
 
-          firebase.auth().signInWithCredential(facebookCredential)
-          .then((success) => {
-              alert("Firebase success: " + JSON.stringify(success));
-              this.userProfile = success;
-          })
-          .catch((error) => {
-              alert("Firebase failure: " + JSON.stringify(error));
-          });
+    firebase.auth().signInWithCredential(facebookCredential)
+      .then((success) => {
+        console.log("Firebase success: " + JSON.stringify(success));
+        this.userProfile = success;
+      })
+      .catch((error) => {
+      console.log("Firebase failure: " + JSON.stringify(error));
+    });
 
-      }).catch((error) => { alert(error) });
+    }).catch((error) => { console.log(error) });
   }
+
   loginUser(){
 
     this.submitAttempt = true;
