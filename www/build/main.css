@@ -26122,6 +26122,14 @@ sub {
   }
 }
 
+page-buy ion-list-header {
+  text-align: center;
+}
+
+page-buy .price {
+  color: green;
+}
+
 page-login form {
   margin-bottom: 32px;
 }

@@ -18,9 +18,15 @@ export class SellCreatePage {
 
   user = firebase.auth().currentUser;
 
+  userSchool: any;
+
   isReadyToSave: boolean;
 
   form: FormGroup;
+
+  starCountRef = firebase.database().ref('users/' + this.user.uid).once('value').then( (data) => {
+    this.userSchool = data.val().school;
+  });
 
   constructor(public navCtrl: NavController, public viewCtrl: ViewController, formBuilder: FormBuilder) {
     this.form = formBuilder.group({
@@ -47,7 +53,7 @@ export class SellCreatePage {
     if(!this.form.valid) { return; }
     let data = {};
 
-    let database = firebase.database().ref('/users').child(this.user.uid).child("sellingBooks").push({
+    firebase.database().ref('/users').child(this.user.uid).child("sellingBooks").push({
       class: this.form.value.classCode,
       name: this.form.value.name,
       author: this.form.value.author,
@@ -55,6 +61,16 @@ export class SellCreatePage {
       price: this.form.value.price,
       negotiate: this.form.value.negotiate
     });
+
+    // firebase.database().ref('schools/').child(this.userSchool).push({
+    //   seller: this.user.uid,
+    //   class: this.form.value.classCode,
+    //   name: this.form.value.name,
+    //   author: this.form.value.author,
+    //   edition: this.form.value.edition,
+    //   price: this.form.value.price,
+    //   negotiate: this.form.value.negotiate
+    // });
     this.viewCtrl.dismiss(this.form.value);
   }
 }

@@ -14,6 +14,19 @@
 
 
 <ion-content >
-  <ion-searchbar placeholder="Search for Class, Book Name or Author"></ion-searchbar>
+  <ion-searchbar (ionInput)="getItems($event)" placeholder="Search for Class, Book Name or Author"></ion-searchbar>
+  <ion-list-header>
+    Searching for Michigan State University
+  </ion-list-header>
+  <ion-list *ngIf="!empty">
+    <button ion-item (click)="openItem(item)" *ngFor="let book of booksList">
+      <ion-avatar item-left>
+        <img src="https://scontent.xx.fbcdn.net/v/t31.0-8/12138491_10206784856473320_5648851967370717791_o.jpg?oh=f2a03f734d7b4511825b2431b55d5b7d&oe=590AB56C" />
+      </ion-avatar>
+      <h2>{{book.class}}</h2>
+      <p>{{book.name}}</p>
+      <p class="price">${{book.price}}</p>
+    </button>
+  </ion-list>
 
 </ion-content>

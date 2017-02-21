@@ -18,7 +18,11 @@ import firebase from 'firebase';
 export class SellPage {
   books: any[] = [];
   user = firebase.auth().currentUser;
+  userSchool: any;
   ref = firebase.database().ref('/users').child(this.user.uid).child("sellingBooks");
+  starCountRef = firebase.database().ref('users/' + this.user.uid).once('value').then( (data) => {
+    this.userSchool = data.val().school;
+  });
 
   constructor(public nav: NavController, public navParams: NavParams, public modalCtrl: ModalController, public alertCtrl: AlertController) {
     this.ref.orderByChild("class").once("value", (snapshot) => {
@@ -73,6 +77,7 @@ export class SellPage {
           handler: () => {
             console.log('Agree clicked');
             this.ref.child(book.id).remove();
+            // firebase.database().ref('schools/').child(this.userSchool).child(book.id).remove();
           }
         }
       ]
