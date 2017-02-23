@@ -18,12 +18,12 @@
 		6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */; };
 		833B60C221C14559A8B8A1CC /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CDDF787E124384A35EA6B0 /* CDVLogger.m */; };
 		9CD0395AD1F34B66A151C43F /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FE038890DA487FBDB6353C /* CDVSplashScreen.m */; };
-		DA558172F97842D6A44523D0 /* IonicKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = E9DBFBBB8F574FF99C8B3406 /* IonicKeyboard.m */; };
 		F1E8F7FB666F4423AFAEACCD /* FacebookConnectPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 396B8ABF7713411D84DBE966 /* FacebookConnectPlugin.m */; };
 		9EDB5E2CCA404106AB6F37CC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACB459B401AA4D13AE32DF30 /* Bolts.framework */; };
 		D566FA300B2D47A88DE0F7FF /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C6AEB2CA224ACF8BDCD279 /* FBSDKCoreKit.framework */; };
 		957D0F4BF25C4B3387F7D80E /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0608D6C8D514034BB5D5B99 /* FBSDKLoginKit.framework */; };
 		B737B313F3B546A8AC5156FE /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47B68D234E684933BD6B5734 /* FBSDKShareKit.framework */; };
+		9EBC436F4D954BDFA4324646 /* IonicKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = A468495DD0DD4259974EC981 /* IonicKeyboard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,14 +64,12 @@
 		5DBC80C338724CCCA1F80853 /* CDVSplashScreen.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVSplashScreen.h; path = "cordova-plugin-splashscreen/CDVSplashScreen.h"; sourceTree = "<group>"; };
 		6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CDVLaunchScreen.storyboard; path = Bookler/CDVLaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		6FD613288E7341F29ABB7AF0 /* CDVLogger.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVLogger.h; path = "cordova-plugin-console/CDVLogger.h"; sourceTree = "<group>"; };
-		76CCCDE69BEF47E1BECC2BA5 /* IonicKeyboard.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = IonicKeyboard.h; path = "ionic-plugin-keyboard/IonicKeyboard.h"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Bookler-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Bookler-Info.plist"; path = "Bookler/Bookler-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = SOURCE_ROOT; };
 		9A97C370EAC14A5893648F90 /* CDVStatusBar.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVStatusBar.m; path = "cordova-plugin-statusbar/CDVStatusBar.m"; sourceTree = "<group>"; };
 		A7CDDF787E124384A35EA6B0 /* CDVLogger.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVLogger.m; path = "cordova-plugin-console/CDVLogger.m"; sourceTree = "<group>"; };
 		C3FE038890DA487FBDB6353C /* CDVSplashScreen.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVSplashScreen.m; path = "cordova-plugin-splashscreen/CDVSplashScreen.m"; sourceTree = "<group>"; };
 		D7C9E6B443204F908D87D9E1 /* CDVDevice.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVDevice.m; path = "cordova-plugin-device/CDVDevice.m"; sourceTree = "<group>"; };
 		DB8BB2A800254F3AA8B300A5 /* CDVStatusBar.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVStatusBar.h; path = "cordova-plugin-statusbar/CDVStatusBar.h"; sourceTree = "<group>"; };
-		E9DBFBBB8F574FF99C8B3406 /* IonicKeyboard.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = IonicKeyboard.m; path = "ionic-plugin-keyboard/IonicKeyboard.m"; sourceTree = "<group>"; };
 		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
@@ -82,6 +80,8 @@
 		20C6AEB2CA224ACF8BDCD279 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; name = "FBSDKCoreKit.framework"; path = "Bookler/Plugins/cordova-plugin-facebook4/FBSDKCoreKit.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		A0608D6C8D514034BB5D5B99 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; name = "FBSDKLoginKit.framework"; path = "Bookler/Plugins/cordova-plugin-facebook4/FBSDKLoginKit.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		47B68D234E684933BD6B5734 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; name = "FBSDKShareKit.framework"; path = "Bookler/Plugins/cordova-plugin-facebook4/FBSDKShareKit.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		A468495DD0DD4259974EC981 /* IonicKeyboard.m */ = {isa = PBXFileReference; name = "IonicKeyboard.m"; path = "ionic-plugin-keyboard/IonicKeyboard.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		0150213705254E89B49442A9 /* IonicKeyboard.h */ = {isa = PBXFileReference; name = "IonicKeyboard.h"; path = "ionic-plugin-keyboard/IonicKeyboard.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,8 +193,6 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
-				E9DBFBBB8F574FF99C8B3406 /* IonicKeyboard.m */,
-				76CCCDE69BEF47E1BECC2BA5 /* IonicKeyboard.h */,
 				A7CDDF787E124384A35EA6B0 /* CDVLogger.m */,
 				6FD613288E7341F29ABB7AF0 /* CDVLogger.h */,
 				9A97C370EAC14A5893648F90 /* CDVStatusBar.m */,
@@ -207,6 +205,8 @@
 				33A34F6392D1447D811C0942 /* CDVViewController+SplashScreen.h */,
 				396B8ABF7713411D84DBE966 /* FacebookConnectPlugin.m */,
 				EA7B6795A6704E6C8BB4E148 /* FacebookConnectPlugin.h */,
+				A468495DD0DD4259974EC981 /* IonicKeyboard.m */,
+				0150213705254E89B49442A9 /* IonicKeyboard.h */,
 			);
 			name = Plugins;
 			path = Bookler/Plugins;
@@ -327,13 +327,13 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
-				DA558172F97842D6A44523D0 /* IonicKeyboard.m in Sources */,
 				833B60C221C14559A8B8A1CC /* CDVLogger.m in Sources */,
 				64FB8635630B40AD8C3559C8 /* CDVStatusBar.m in Sources */,
 				27CA7DFC06EE487A95CB3A13 /* CDVDevice.m in Sources */,
 				9CD0395AD1F34B66A151C43F /* CDVSplashScreen.m in Sources */,
 				5FBBECD7076D406E85A4D5FD /* CDVViewController+SplashScreen.m in Sources */,
 				F1E8F7FB666F4423AFAEACCD /* FacebookConnectPlugin.m in Sources */,
+				9EBC436F4D954BDFA4324646 /* IonicKeyboard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26134,12 +26134,6 @@ page-buy-detail ion-content {
   text-align: center;
 }
 
-page-buy-detail .profileImg {
-  border-radius: 50%;
-  margin-bottom: 10%;
-  width: 60%;
-}
-
 page-buy-detail ion-input {
   color: grey;
 }

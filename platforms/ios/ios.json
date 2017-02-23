@@ -9,10 +9,6 @@
                 "parents": {
                     "/*": [
                         {
-                            "xml": "<feature name=\"Keyboard\"><param name=\"ios-package\" onload=\"true\" value=\"IonicKeyboard\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"Console\"><param name=\"ios-package\" value=\"CDVLogger\" /></feature>",
                             "count": 1
                         },
@@ -63,6 +59,10 @@
                         {
                             "xml": "<access origin=\"https://*.akamaihd.net\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Keyboard\"><param name=\"ios-package\" onload=\"true\" value=\"IonicKeyboard\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -104,9 +104,6 @@
         }
     },
     "installed_plugins": {
-        "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "com.ionicframework.bookler467870"
-        },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.ionicframework.bookler467870"
         },
@@ -126,19 +123,13 @@
             "APP_ID": "416882581978909",
             "APP_NAME": "Bookler",
             "PACKAGE_NAME": "com.ionicframework.bookler467870"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.ionicframework.bookler467870"
         }
     },
     "dependent_plugins": {},
     "modules": [
-        {
-            "id": "ionic-plugin-keyboard.keyboard",
-            "file": "plugins/ionic-plugin-keyboard/www/ios/keyboard.js",
-            "pluginId": "ionic-plugin-keyboard",
-            "clobbers": [
-                "cordova.plugins.Keyboard"
-            ],
-            "runs": true
-        },
         {
             "id": "cordova-plugin-console.console",
             "file": "plugins/cordova-plugin-console/www/console-via-logger.js",
@@ -186,15 +177,24 @@
             "clobbers": [
                 "facebookConnectPlugin"
             ]
+        },
+        {
+            "id": "ionic-plugin-keyboard.keyboard",
+            "file": "plugins/ionic-plugin-keyboard/www/ios/keyboard.js",
+            "pluginId": "ionic-plugin-keyboard",
+            "clobbers": [
+                "cordova.plugins.Keyboard"
+            ],
+            "runs": true
         }
     ],
     "plugin_metadata": {
-        "ionic-plugin-keyboard": "2.2.1",
         "cordova-plugin-whitelist": "1.3.1",
         "cordova-plugin-console": "1.0.5",
         "cordova-plugin-statusbar": "2.2.1",
         "cordova-plugin-device": "1.1.4",
         "cordova-plugin-splashscreen": "4.0.1",
-        "cordova-plugin-facebook4": "1.7.4"
+        "cordova-plugin-facebook4": "1.7.4",
+        "ionic-plugin-keyboard": "2.2.1"
     }
 }

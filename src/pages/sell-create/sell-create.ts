@@ -52,6 +52,7 @@ export class SellCreatePage {
   done() {
     if(!this.form.valid) { return; }
     let data = {};
+    let myDate: String = new Date().toDateString();
 
     firebase.database().ref('/users').child(this.user.uid).child("sellingBooks").push({
       class: this.form.value.classCode,
@@ -59,7 +60,8 @@ export class SellCreatePage {
       author: this.form.value.author,
       edition: this.form.value.edition,
       price: this.form.value.price,
-      negotiate: this.form.value.negotiate
+      negotiate: this.form.value.negotiate,
+      posted: myDate
     });
 
     // firebase.database().ref('schools/').child(this.userSchool).push({

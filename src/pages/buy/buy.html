@@ -13,7 +13,7 @@
 </ion-header>
 
 
-<ion-content >
+<ion-content (click)="closeKeyboard()">
   <ion-searchbar (ionInput)="getItems($event)" placeholder="Search for Class, Book Name or Author"></ion-searchbar>
   <ion-list-header>
     Searching for Michigan State University

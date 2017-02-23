@@ -58,6 +58,10 @@
         <ion-input id="price" value="{{book.price}}" formControlName="price"></ion-input>
       </ion-item>
       <ion-item>
+        <ion-label fixed>Created on</ion-label>
+        <ion-input value="{{book.posted}}" readonly="true"></ion-input>
+      </ion-item>
+      <ion-item>
         <ion-label>Willing to Negotiate</ion-label>
         <ion-toggle checked="{{book.negotiate}}" formControlName="negotiate"></ion-toggle>
       </ion-item>

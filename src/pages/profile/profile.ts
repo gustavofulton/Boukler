@@ -43,6 +43,37 @@ export class ProfilePage {
   goSettings() {
     this.navCtrl.push(SettingsPage);
   }
+//   getPicture() {
+//     let base64Picture;
+//     let options = {
+//         destinationType: 0,
+//         sourceType: 0, 
+//         encodingType:0
+//     };
+//
+//     let promise = new Promise((resolve, reject) => {
+//          Camera.getPicture(options).then((imageData) => {
+//               base64Picture = "data:image/jpeg;base64," + imageData;
+//               resolve(base64Picture);
+//           }, (error) => {
+//               reject(error);
+//         });
+//
+//     });
+//     return promise;
+// }
+//
+// // Update Provide Picture of User
+// updatePicture() {
+//   this.getUid().then(uid => {
+//     let pictureRef =
+//      this.af.database.object(`/users/${uid}/picture`);
+//     this.getPicture()
+//     .then((image) => {
+//         pictureRef.set(image);
+//     });
+//   });
+// }
 
 
 

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, Keyboard } from 'ionic-angular';
 import { BuyDetailPage } from '../buy-detail/buy-detail';
+// import { Keyboard } from 'ionic-native';
 
 import firebase from 'firebase';
 
@@ -26,7 +27,7 @@ export class BuyPage {
   // sellerUserId = firebase.auth().currentUser.uid;
 
 
-  constructor(public nav: NavController, public navParams: NavParams) {
+  constructor(public nav: NavController, public navParams: NavParams, public keyboard: Keyboard) {
     this.ref.on("value", (snapshot) => {
       let books = [];
       snapshot.forEach((childSnapshot) => {
@@ -87,4 +88,7 @@ export class BuyPage {
     this.nav.push(BuyDetailPage, {book: book});
   }
 
+  closeKeyboard() {
+    this.keyboard.close();
+  }
 }
