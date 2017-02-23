@@ -26130,6 +26130,28 @@ page-buy .price {
   color: green;
 }
 
+page-buy-detail ion-content {
+  text-align: center;
+}
+
+page-buy-detail .profileImg {
+  border-radius: 50%;
+  margin-bottom: 10%;
+  width: 60%;
+}
+
+page-buy-detail ion-input {
+  color: grey;
+}
+
+page-buy-detail #price {
+  color: green;
+}
+
+page-buy-detail #sendMessage {
+  margin-bottom: 10%;
+}
+
 page-login form {
   margin-bottom: 32px;
 }

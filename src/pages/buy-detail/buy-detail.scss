@@ -1,0 +1,21 @@
+page-buy-detail {
+  ion-content {
+    text-align: center;
+    // margin-top: 10%;
+  }
+  .profileImg {
+    border-radius: 50%;
+    margin-bottom: 10%;
+    width: 60%;
+  }
+  ion-input {
+    color: grey;
+  }
+  #price {
+    color: green;
+  }
+  #sendMessage {
+    margin-bottom: 10%;
+  }
+
+}

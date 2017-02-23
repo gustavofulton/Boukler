@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { BuyDetailPage } from '../buy-detail/buy-detail';
 
 import firebase from 'firebase';
 
@@ -20,6 +21,7 @@ export class BuyPage {
   empty = true;
 
   ref = firebase.database().ref('/users');
+  userId = firebase.auth().currentUser.uid;
 
   // sellerUserId = firebase.auth().currentUser.uid;
 
@@ -29,17 +31,21 @@ export class BuyPage {
       let books = [];
       snapshot.forEach((childSnapshot) => {
         let sellerUserId = childSnapshot.key;
-        let sellerProfilePic = childSnapshot.val().profilePic;
-        childSnapshot.child("sellingBooks").forEach((extraChildSnap) => {
-          let tempVal = extraChildSnap.val();
-          tempVal.id = extraChildSnap.key;
-          tempVal.sellerId = sellerUserId;
-          tempVal.sellerProfilePic = sellerProfilePic;
-            books.push(
-              tempVal
-            );
-          return false;
-        });
+        if (sellerUserId != this.userId) {
+          let sellerProfilePic = childSnapshot.val().profilePic;
+          let sellerFirstName = childSnapshot.val().firstName;
+          childSnapshot.child("sellingBooks").forEach((extraChildSnap) => {
+            let tempVal = extraChildSnap.val();
+            tempVal.id = extraChildSnap.key;
+            tempVal.sellerId = sellerUserId;
+            tempVal.sellerProfilePic = sellerProfilePic;
+            tempVal.sellerFirstName = sellerFirstName;
+              books.push(
+                tempVal
+              );
+            return false;
+          });
+        }
         this.booksList = books;
         this.loadedBooksList = books;
         return false;
@@ -47,9 +53,10 @@ export class BuyPage {
     });
   }
 
-  initializeItems(){
+  initializeItems() {
     this.booksList = this.loadedBooksList;
   }
+
   getItems(searchbar) {
     this.empty = false;
     // Reset items back to all of the items
@@ -58,16 +65,12 @@ export class BuyPage {
     // set q to the value of the searchbar
     var q = searchbar.srcElement.value;
 
-
     // if the value is an empty string don't filter the items
     if (!q) {
       this.empty = true;
       return;
     }
-
-    console.log(this.booksList);
-
-
+    // Search by name or class
     this.booksList = this.booksList.filter((v) => {
       if(v.class && q || v.name && q) {
         if (v.class.toLowerCase().indexOf(q.toLowerCase()) > -1) {
@@ -78,9 +81,10 @@ export class BuyPage {
         return false;
       }
     });
-    //
-    // console.log(q, this.booksList.length);
+  }
 
-}
+  openItem(book) {
+    this.nav.push(BuyDetailPage, {book: book});
+  }
 
 }

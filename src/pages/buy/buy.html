@@ -19,7 +19,7 @@
     Searching for Michigan State University
   </ion-list-header>
   <ion-list *ngIf="!empty">
-    <button ion-item (click)="openItem(item)" *ngFor="let book of booksList">
+    <button ion-item (click)="openItem(book)" *ngFor="let book of booksList">
       <ion-avatar item-left>
         <img [src]="book.sellerProfilePic" />
       </ion-avatar>
