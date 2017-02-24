@@ -8,26 +8,25 @@
 
 
 <ion-content padding>
-  <img src="http://placehold.it/300x100">
   <form [formGroup]="signupForm" (submit)="signupUser()" novalidate class="loginForm">
 
     <ion-item>
-      <ion-label floating>Email</ion-label>
+      <ion-label floating>First Name</ion-label>
+      <ion-input #firstName formControlName="firstName" type="text" autocapitalize="words"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Last Name</ion-label>
+      <ion-input #lastName formControlName="lastName" type="text" autocapitalize="words"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>University Email</ion-label>
       <ion-input #email formControlName="email" type="email" (change)="elementChanged(email)"
         [class.invalid]="!signupForm.controls.email.valid && (emailChanged || submitAttempt)"></ion-input>
     </ion-item>
     <ion-item class="error-message" *ngIf="!signupForm.controls.email.valid  && (emailChanged || submitAttempt)">
       <p>Please enter a valid email.</p>
-    </ion-item>
-
-    <ion-item>
-      <ion-label floating>First Name</ion-label>
-      <ion-input #firstName formControlName="firstName" type="firstName"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label floating>Last Name</ion-label>
-      <ion-input #lastName formControlName="lastName" type="lastName"></ion-input>
     </ion-item>
 
     <ion-item>
