@@ -19,7 +19,7 @@
 
 
 <ion-content class="home">
-  <img (click)="getProfileImage()" class="profileImg" src="https://scontent.xx.fbcdn.net/v/t31.0-8/12138491_10206784856473320_5648851967370717791_o.jpg?oh=f2a03f734d7b4511825b2431b55d5b7d&oe=590AB56C" />
+  <img (click)="getProfileImage()" class="profileImg" [src]="profilePic" />
   <ion-card-title class="name">
       {{firstName}} {{lastName}}
   </ion-card-title>

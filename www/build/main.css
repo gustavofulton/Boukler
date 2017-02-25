@@ -26189,9 +26189,13 @@ page-message ion-note {
 }
 
 page-profile .profileImg {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  height: 20%;
-  border: 2px solid white;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
 
 page-profile .home {

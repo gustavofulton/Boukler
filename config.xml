@@ -7,6 +7,8 @@
   <access origin="*"/>
   <allow-navigation href="http://ionic.local/*"/>
   <allow-navigation href="http://172.16.0.26:8100"/>
+  <allow-navigation href="http://192.168.1.145:8100"/>
+  <allow-navigation href="http://35.20.79.211:8100"/>
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>
   <allow-intent href="tel:*"/>
@@ -43,5 +45,8 @@
   <plugin name="cordova-plugin-facebook4" spec="~1.7.4">
     <variable name="APP_ID" value="416882581978909"/>
     <variable name="APP_NAME" value="Bookler"/>
+  </plugin>
+  <plugin name="cordova-plugin-googleplus" spec="https://github.com/EddyVerbruggen/cordova-plugin-googleplus">
+    <variable name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.778487926311-foubn8ksknc9i31l0u4ert58srfqm94o"/>
   </plugin>
 </widget>

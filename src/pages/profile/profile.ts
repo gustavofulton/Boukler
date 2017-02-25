@@ -20,6 +20,7 @@ export class ProfilePage {
   lastName: string;
   school: any;
   email: any;
+  profilePic: any;
   mirror = this;
 
   userId = firebase.auth().currentUser.uid;
@@ -29,6 +30,7 @@ export class ProfilePage {
     this.firstName = data.val().firstName;
     this.lastName = data.val().lastName;
     this.school = data.val().school;
+    this.profilePic = data.val().profilePic;
     // this.user.firstName = snapshot.val().firstName;
     // console.log(this.lastName);
 
@@ -47,7 +49,7 @@ export class ProfilePage {
 //     let base64Picture;
 //     let options = {
 //         destinationType: 0,
-//         sourceType: 0, 
+//         sourceType: 0,
 //         encodingType:0
 //     };
 //

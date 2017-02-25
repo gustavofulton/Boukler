@@ -12,6 +12,7 @@ import {ChoosecolPage} from '../choosecol/choosecol'
 // import { ResetPasswordPage } from '../reset-password/reset-password';
 import { MainPage } from '../../pages/pages';
 import { Facebook } from 'ionic-native';
+import { GooglePlus } from 'ionic-native';
 
 import firebase from 'firebase';
 
@@ -20,6 +21,7 @@ import firebase from 'firebase';
   templateUrl: 'login.html',
 })
 export class LoginPage {
+  FB_APP_ID: number = 416882581978909;
   public loginForm;
   userProfile: any = null;
   emailChanged: boolean = false;
@@ -29,6 +31,7 @@ export class LoginPage {
 
   constructor(private _app: App, public nav: NavController, public authData: AuthData, public formBuilder: FormBuilder,
     public alertCtrl: AlertController, public loadingCtrl: LoadingController) {
+      Facebook.browserInit(this.FB_APP_ID, "v2.8");
 
     /**
      * Creates a ControlGroup that declares the fields available, their values and the validators that they are going
@@ -51,23 +54,7 @@ export class LoginPage {
     this[field + "Changed"] = true;
   }
 
-  facebookLogin(){
-    Facebook.login(['email']).then( (response) => {
-      const facebookCredential = firebase.auth.FacebookAuthProvider
-        .credential(response.authResponse.accessToken);
-
-    firebase.auth().signInWithCredential(facebookCredential)
-      .then((success) => {
-        console.log("Firebase success: " + JSON.stringify(success));
-        this.userProfile = success;
-      })
-      .catch((error) => {
-      console.log("Firebase failure: " + JSON.stringify(error));
-    });
-
-    }).catch((error) => { console.log(error) });
-  }
-
+  // Email login user
   loginUser(){
 
     this.submitAttempt = true;
@@ -102,6 +89,49 @@ export class LoginPage {
       });
       this.loading.present();
     }
+  }
+
+  facebookLogIn() {
+    let permissions = new Array();
+    //the permissions your facebook app needs from the user
+    permissions = ["public_profile", "email"];
+    Facebook.login(permissions)
+      .then(function(response) {
+
+        const facebookCredential = firebase.auth.FacebookAuthProvider.credential(response.authResponse.accessToken);
+
+        firebase.auth().signInWithCredential(facebookCredential)
+          .then((success) => {
+            console.log("Firebase success: " + JSON.stringify(success));
+
+            // Getting Facebook user information
+            let userId = response.authResponse.userID;
+            let params = new Array();
+            Facebook.api("/me?fields=name,gender", params)
+            .then(function(user) {
+              user.picture = "https://graph.facebook.com/" + userId + "/picture?width=1000&height=1000";
+              let fireId = firebase.auth().currentUser.uid;
+              let ref = firebase.database().ref('/users');
+              ref.child(fireId).set(
+                {
+                  email: success.email,
+                  firstName: success.displayName,
+                  lastName: "",
+                  id: 0,
+                  phoneNumber: "",
+                  school: "Michigan State University",
+                  profilePic: user.picture
+                }
+              );
+            })
+          })
+          .catch((error) => {
+          console.log("Firebase failure: " + JSON.stringify(error));
+        });
+
+      }, function(error){
+        alert(error);
+    });
   }
 
   goToSignup(){

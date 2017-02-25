@@ -29,6 +29,10 @@
         },
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.ionicframework.bookler467870"
+        },
+        "cordova-plugin-googleplus": {
+            "REVERSED_CLIENT_ID": "com.googleusercontent.apps.778487926311-foubn8ksknc9i31l0u4ert58srfqm94o",
+            "PACKAGE_NAME": "com.ionicframework.bookler467870"
         }
     },
     "dependent_plugins": {}
