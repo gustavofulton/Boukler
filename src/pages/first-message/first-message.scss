@@ -1,0 +1,29 @@
+page-first-message {
+  .messageRight {
+    background-color: #387ef5;
+    color: white;
+    float: right;
+    padding: 6px 10px 7px;
+    margin: 8px 0;
+    margin-left: 35px;
+    border-radius: 10px 10px 0 10px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+    word-wrap: break-word;
+    max-width: 60%;
+  }
+  .input-label {
+    word-wrap: break-word;
+  }
+  ion-footer {
+    border-top: 1px solid lightgrey;
+  }
+  button {
+    align-self: center;
+  }
+  textarea {
+    border: none;
+    background-color: transparent;
+    width: 100%;
+  }
+
+}

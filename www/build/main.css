@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Lato");
 .ion-ios-add:before {
   content: "\f102";
 }
@@ -5052,7 +5053,7 @@ ion-footer {
 }
 
 ion-app.ios {
-  font-family: -apple-system, "Helvetica Neue", "Roboto", sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 1.4rem;
   background-color: #fff;
 }
@@ -26146,12 +26147,58 @@ page-buy-detail #sendMessage {
   margin-bottom: 10%;
 }
 
+page-first-message .messageRight {
+  background-color: #387ef5;
+  color: white;
+  float: right;
+  padding: 6px 10px 7px;
+  margin: 8px 0;
+  margin-left: 35px;
+  border-radius: 10px 10px 0 10px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  word-wrap: break-word;
+  max-width: 60%;
+}
+
+page-first-message .input-label {
+  word-wrap: break-word;
+}
+
+page-first-message ion-footer {
+  border-top: 1px solid lightgrey;
+}
+
+page-first-message button {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+}
+
+page-first-message textarea {
+  border: none;
+  background-color: transparent;
+  width: 100%;
+}
+
+page-login ion-content {
+  text-align: center;
+  background: url("http://cdn.wonderfulengineering.com/wp-content/uploads/2014/05/mobile-wallpapers-14-610x1084.jpg");
+}
+
 page-login form {
+  padding-top: 2em;
   margin-bottom: 32px;
 }
 
 page-login form button {
   margin-top: 20px;
+}
+
+page-login .logo {
+  margin-top: 5em;
+  height: 7em;
+  opacity: 0.7;
 }
 
 page-login p {
@@ -26161,7 +26208,12 @@ page-login p {
 
 page-login ion-label {
   margin-left: 5px;
-  color: grey;
+  color: white;
+}
+
+page-login ion-item {
+  background-color: transparent !important;
+  color: white !important;
 }
 
 page-login ion-input {

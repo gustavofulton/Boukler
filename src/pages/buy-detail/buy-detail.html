@@ -56,7 +56,7 @@
       <!-- <ion-icon *ngIf="!book.negotiate" name="close"></ion-icon> -->
     </ion-item>
   </ion-list>
-  <button id="sendMessage" ion-button round outline>Send Message to {{book.sellerFirstName}}</button>
+  <button (click)="sendMessage()" id="sendMessage" ion-button round outline>Send Message to {{book.sellerFirstName}}</button>
 
 
 
