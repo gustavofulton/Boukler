@@ -1,9 +1,22 @@
 page-login {
+  ion-content {
+    text-align: center;
+    background: url('http://cdn.wonderfulengineering.com/wp-content/uploads/2014/05/mobile-wallpapers-14-610x1084.jpg');
+  }
+
   form {
+    padding-top: 2em;
     margin-bottom: 32px;
     button {
       margin-top: 20px;
     }
+  }
+
+  .logo {
+    margin-top: 5em;
+    height: 7em;
+    opacity: 0.7;
+
   }
 
   p {
@@ -13,9 +26,12 @@ page-login {
 
   ion-label {
     margin-left: 5px;
-    color: grey;
+    color: white;
   }
-
+  ion-item {
+    background-color: transparent !important;
+    color: white !important;
+  }
   ion-input {
     padding: 5px;
   }
