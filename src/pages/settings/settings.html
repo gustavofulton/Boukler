@@ -15,28 +15,57 @@
 <ion-content>
 
     <ion-list>
+      <ion-list-header>
+        Profile
+      </ion-list-header>
       <ion-item>
-        <ion-label>Notifications</ion-label>
+         <ion-label fixed>Username</ion-label>
+         <ion-input type="text" value="Fultz" text-right></ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label fixed>Email</ion-label>
+         <ion-input type="text" value="gugafflu@gmail.com" text-right></ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label fixed>Password</ion-label>
+         <ion-input type="text" value="Fultz" text-right></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-list-header>
+        Push Notifications
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Messages</ion-label>
+        <ion-toggle checked="true"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label>In-App Vibrations</ion-label>
+        <ion-toggle checked="true"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label>In-App Sounds</ion-label>
         <ion-toggle></ion-toggle>
       </ion-item>
+    </ion-list>
 
-      <ion-item>
-        <ion-label>Full Name</ion-label>
-        <ion-input></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Age</ion-label>
-        <ion-select>
-          <ion-option value="1" checked="true">1</ion-option>
-          <ion-option value="2">2</ion-option>
-          <ion-option value="3">3</ion-option>
-        </ion-select>
-      </ion-item>
-
-      <button ion-item (click)="logoutUser()">
-        Logout
+    <ion-list>
+      <ion-list-header>
+        Legal
+      </ion-list-header>
+      <button ion-item>
+        <ion-label>Privacy Policy</ion-label>
       </button>
+      <button ion-item>
+        <ion-label>Terms of Service</ion-label>
+      </button>
+    </ion-list>
+
+    <ion-list>
+      <ion-item (click)="logoutUser()" text-center>
+        Logout
+      </ion-item>
     </ion-list>
 
 </ion-content>
