@@ -1,27 +1,32 @@
-import { Component, ViewChild } from '@angular/core';
-import { NavController, NavParams, ViewController, Keyboard, ToastController, TextInput } from 'ionic-angular';
+import { Component } from '@angular/core';
+import { NavController, NavParams, ViewController, Keyboard, ToastController } from 'ionic-angular';
 
-/*
-  Generated class for the FirstMessage page.
+import firebase from 'firebase';
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
+
+
 @Component({
   selector: 'page-first-message',
   templateUrl: 'first-message.html'
 })
 export class FirstMessagePage {
-  message="";
-  messages = [];
-  name : string;
-  class : string;
 
-  @ViewChild('messageInputBox') messageInput: TextInput;
+  user = firebase.auth().currentUser;
+  userName: any;
+
+  message="";
+
+  book: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public keyboard: Keyboard, public toastCtrl: ToastController) {
-    this.name = navParams.get('name');
-    this.class = navParams.get('class');
+    //Get book parameters to see who posted it
+    this.book = navParams.get('book');
+    console.log(this.user);
+
+    //Get current user info
+    firebase.database().ref('users/' + this.user.uid).once('value').then( (data) => {
+      this.userName = data.val().firstName;
+    });
   }
   ionViewDidLoad() {
     // get elements
@@ -33,7 +38,27 @@ export class FirstMessagePage {
   }
 
   sendMessage(message) {
+    let myDate: String = new Date().toString();
     if (message != "") {
+      //Put message in sender user
+      firebase.database().ref('/users').child(this.user.uid).child("messages").push({
+        message: this.message,
+        from: this.userName,
+        fromId: this.user.uid,
+        to: this.book.sellerFirstName,
+        toId: this.book.sellerId,
+        time: myDate
+      });
+
+      //Put message in the receiver user
+      firebase.database().ref('/users').child(this.book.sellerId).child("messages").push({
+        message: this.message,
+        from: this.userName,
+        fromId: this.user.uid,
+        to: this.book.sellerFirstName,
+        toId: this.book.sellerId,
+        time: myDate
+      });
 
       let toast = this.toastCtrl.create({
         message: 'Message Sent!',

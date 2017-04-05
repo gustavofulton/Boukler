@@ -25,7 +25,7 @@ export class BuyDetailPage {
   }
 
   sendMessage() {
-    let messageModal = this.modalCtrl.create(FirstMessagePage, {name: this.book.name, class: this.book.class});
+    let messageModal = this.modalCtrl.create(FirstMessagePage, {book: this.book});
     messageModal.present();
   }
 
