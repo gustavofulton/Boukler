@@ -19,7 +19,7 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content (click)="keyboardClose()">
 
     <ion-list no-lines>
       <ion-item *ngFor="let message of messages" text-wrap>
@@ -36,7 +36,7 @@
   <ion-item no-lines>
       <textarea class="input-label" type="text" rows="1" id="messageInputBox" placeholder="Message" name="message" [(ngModel)]= "message" (input)="change()" required></textarea>
       <!-- <ion-input class="input-label" type="text" placeholder="Message" name="message" [(ngModel)]= "message"></ion-input> -->
-      <button ion-button item-right (click)="sendMessage(message)" type="submit"> Send </button>
+      <button ion-button item-right [disabled]="isEmpty()" (click)="sendMessage(message)" type="submit"> Send </button>
 
   </ion-item>
   </form>

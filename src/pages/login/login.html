@@ -7,7 +7,8 @@
 </ion-header>
 
 <ion-content padding>
-  <img class="logo" src="http://www.endlessicons.com/wp-content/uploads/2014/03/bookmark-icon-2-614x460.png" />
+  <!-- <img class="logo" src="http://www.endlessicons.com/wp-content/uploads/2014/03/bookmark-icon-2-614x460.png" /> -->
+  <img class="logo" src="img/BooklerLogo.png" />
   <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
 
     <ion-item>
@@ -38,11 +39,11 @@
       Login with Facebook
     </button>
 
-    <button ion-button block clear (click)="goToSignup()">
+    <button class="options" color="white" ion-button block clear (click)="goToSignup()">
       Create a new account
     </button>
 
-    <button ion-button block clear (click)="goToResetPassword()">
+    <button color="white" ion-button block clear (click)="goToResetPassword()">
       I forgot my password
     </button>
 </ion-content>
