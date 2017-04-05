@@ -13,6 +13,7 @@ export class FirstMessagePage {
 
   user = firebase.auth().currentUser;
   userName: any;
+  profilePic: any;
 
   message="";
 
@@ -26,6 +27,7 @@ export class FirstMessagePage {
     //Get current user info
     firebase.database().ref('users/' + this.user.uid).once('value').then( (data) => {
       this.userName = data.val().firstName;
+      this.profilePic = data.val().profilePic;
     });
   }
   ionViewDidLoad() {
@@ -45,8 +47,11 @@ export class FirstMessagePage {
         message: this.message,
         from: this.userName,
         fromId: this.user.uid,
+        fromProfilePic: this.profilePic,
         to: this.book.sellerFirstName,
         toId: this.book.sellerId,
+        toProfilePic: this.book.sellerProfilePic,
+        person: this.book.sellerId,
         time: myDate
       });
 
@@ -55,8 +60,11 @@ export class FirstMessagePage {
         message: this.message,
         from: this.userName,
         fromId: this.user.uid,
+        fromProfilePic: this.profilePic,
         to: this.book.sellerFirstName,
         toId: this.book.sellerId,
+        toProfilePic: this.book.sellerProfilePic,
+        person: this.user.uid,
         time: myDate
       });
 

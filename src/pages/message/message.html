@@ -16,74 +16,28 @@
 <ion-content class="home">
 
   <ion-list>
-  <ion-item-sliding>
-    <ion-item (click)="newMessage()">
-      <ion-avatar item-left>
-        <img src="http://findicons.com/files/icons/1072/face_avatars/300/n02.png">
-      </ion-avatar>
-      <h2>Steve Jobs</h2>
-      <p> Hey! Great to see you here.</p>
-      <ion-note item-right>1:12 pm</ion-note>
-    </ion-item>
-    <ion-item-options side="right">
-      <button ion-button color="danger">
-        <ion-icon name="text"></ion-icon>
-        Delete
-      </button>
-    </ion-item-options>
-    <ion-item-options side="left">
-      <button ion-button color="secondary">
-        <ion-icon name="call"></ion-icon>
-        Call
-      </button>
-    </ion-item-options>
-  </ion-item-sliding>
-
-  <ion-item-sliding>
-    <ion-item (click)="newMessage()">
-      <ion-avatar item-left>
-        <img src="http://www.iconarchive.com/download/i47509/hopstarter/face-avatars/Male-Face-N4.ico">
-      </ion-avatar>
-      <h2>Bill Gates</h2>
-      <p> You should check out the book "How I built Microsoft".</p>
-      <ion-note item-right>3:15 am</ion-note>
-    </ion-item>
-    <ion-item-options side="right">
-      <button ion-button color="danger">
-        <ion-icon name="text"></ion-icon>
-        Delete
-      </button>
-    </ion-item-options>
-    <ion-item-options side="left">
-      <button ion-button color="secondary">
-        <ion-icon name="call"></ion-icon>
-        Call
-      </button>
-    </ion-item-options>
-  </ion-item-sliding>
-
-  <ion-item-sliding>
-    <ion-item (click)="newMessage()">
-      <ion-avatar item-left>
-        <img src="https://maxcdn.icons8.com/Share/icon/Cinema//avatar1600.png">
-      </ion-avatar>
-      <h2>Mark Zuckerberg</h2>
-      <p> Wanna watch a movie? </p>
-      <ion-note item-right>12:01 am</ion-note>
-    </ion-item>
-    <ion-item-options side="right">
-      <button ion-button color="danger">
-        <ion-icon name="text"></ion-icon>
-        Delete
-      </button>
-    </ion-item-options>
-    <ion-item-options side="left">
-      <button ion-button color="secondary">
-        <ion-icon name="call"></ion-icon>
-        Call
-      </button>
-    </ion-item-options>
-  </ion-item-sliding>
-</ion-list>
+    <ion-item-sliding>
+      <ion-item (click)="newMessage()" *ngFor="let chat of chats">
+        <ion-avatar item-left>
+          <img [src]="chat.chatProfile">
+        </ion-avatar>
+        <h2>{{chat.chatName}}</h2>
+        <p> {{chat.message}}</p>
+        <ion-note item-right>{{chat.time | date:'jm' }}</ion-note>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger">
+          <ion-icon name="text"></ion-icon>
+          Delete
+        </button>
+      </ion-item-options>
+      <ion-item-options side="left">
+        <button ion-button color="secondary">
+          <ion-icon name="call"></ion-icon>
+          Call
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 
 </ion-content>
